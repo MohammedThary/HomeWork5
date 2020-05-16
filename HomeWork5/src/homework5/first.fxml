@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="main_pane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="486.0" prefWidth="1107.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="homework5.FirstController">
+   <right>
+      <VBox id="#right_vbox" alignment="CENTER" maxHeight="-Infinity" spacing="10.0" stylesheets="@style.css" BorderPane.alignment="CENTER">
+         <children>
+            <Button id="#btn" fx:id="SE_S_btn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#btn_SE_S_handel" prefHeight="32.0" prefWidth="101.0" stylesheets="@style.css" text="SE Student" />
+            <Button id="#btn" fx:id="best_s_btn" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="196.0" mnemonicParsing="false" onAction="#btn_best_S_handel" prefHeight="32.0" prefWidth="101.0" stylesheets="@style.css" text="Best Stu" />
+            <Button id="#btn" fx:id="pass_btn" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="212.0" mnemonicParsing="false" onAction="#btn_pass_S_handel" prefHeight="32.0" prefWidth="101.0" stylesheets="@style.css" text="Pass stu" />
+            <Button id="#btn" fx:id="less_grade" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="228.0" mnemonicParsing="false" onAction="#btn_less_S_handel" prefHeight="32.0" prefWidth="101.0" stylesheets="@style.css" text="CS grade &lt;70%" />
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+   </right>
+   <left>
+      <VBox alignment="CENTER" maxHeight="-Infinity" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button id="#btn" fx:id="show_btn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#btn_show_handel" prefHeight="32.0" prefWidth="101.0" stylesheets="@style.css" text="Show" />
+            <Button id="#btn" fx:id="add_btn" alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="196.0" mnemonicParsing="false" onAction="#btn_add_handel" prefHeight="32.0" prefWidth="101.0" stylesheets="@style.css" text="Add" />
+            <Button id="#btn" fx:id="update_btn" alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="217.0" mnemonicParsing="false" onAction="#btn_update_handel" prefHeight="32.0" prefWidth="101.0" stylesheets="@style.css" text="Update" />
+            <Button id="#btn" fx:id="delete_btn" alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="238.0" mnemonicParsing="false" onAction="#btn_delete_handel" prefHeight="32.0" prefWidth="101.0" stylesheets="@style.css" text="Delete" />
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+   </left>
+   <bottom>
+      <HBox BorderPane.alignment="CENTER">
+         <children>
+            <TextArea id="#button_text_area" fx:id="text_area" prefHeight="98.0" prefWidth="915.0" promptText="SQL Quere" stylesheets="@style.css" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+   </bottom>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+   <center>
+      <VBox prefHeight="278.0" prefWidth="832.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="40.0" prefWidth="554.0" spacing="20.0">
+               <children>
+                  <Label id="#label" alignment="CENTER" prefHeight="17.0" prefWidth="113.0" stylesheets="@style.css" text="Student" />
+                  <Region maxWidth="-Infinity" prefHeight="19.0" prefWidth="181.0" HBox.hgrow="ALWAYS" />
+                  <Label id="#label" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="17.0" prefWidth="101.0" stylesheets="@style.css" text="Registration" />
+                  <Region layoutX="348.0" layoutY="20.0" maxWidth="-Infinity" prefHeight="19.0" prefWidth="181.0" />
+                  <Label id="#label" alignment="CENTER" layoutX="449.0" layoutY="20.0" prefHeight="17.0" prefWidth="101.0" stylesheets="@style.css" text="course" />
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="284.0" prefWidth="615.0">
+               <children>
+                  <TableView fx:id="student_table" prefHeight="241.0" prefWidth="264.0" stylesheets="@style.css">
+                    <columns>
+                      <TableColumn fx:id="student_id_col" prefWidth="51.0" text="ID" />
+                        <TableColumn fx:id="student_name_col" prefWidth="78.0" text="Name" />
+                        <TableColumn fx:id="student_grade_col" prefWidth="68.0" text="Grade" />
+                        <TableColumn fx:id="student_major_col" prefWidth="65.0" text="Major" />
+                    </columns>
+                  </TableView>
+                  <Region prefHeight="241.0" prefWidth="90.0" HBox.hgrow="ALWAYS" />
+                  <TableView fx:id="registration_table" layoutX="10.0" layoutY="10.0" prefHeight="241.0" prefWidth="224.0" stylesheets="@style.css">
+                     <columns>
+                        <TableColumn fx:id="registration_sid_col" prefWidth="75.0" text="Student ID" />
+                        <TableColumn fx:id="registration_cid_col" prefWidth="71.0" text="Course ID" />
+                        <TableColumn fx:id="registration_semester_col" prefWidth="71.0" text="Semester" />
+                     </columns>
+                  </TableView>
+                  <Region layoutX="274.0" layoutY="10.0" prefHeight="241.0" prefWidth="90.0" />
+                  <TableView fx:id="course_table" layoutX="346.0" layoutY="10.0" prefHeight="241.0" prefWidth="236.0" stylesheets="@style.css">
+                     <columns>
+                        <TableColumn fx:id="course_id_col" prefWidth="57.0" text="id" />
+                        <TableColumn fx:id="course_name_col" prefWidth="97.0" text="name" />
+                        <TableColumn fx:id="course_room_col" prefWidth="79.0" text="room" />
+                     </columns>
+                  </TableView>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+   <top>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <HBox id="#top_hbox" alignment="CENTER" spacing="10.0" stylesheets="@style.css">
+               <children>
+                  <Label id="#label" alignment="CENTER" prefHeight="17.0" prefWidth="36.0" stylesheets="@style.css" text="ID" />
+                  <TextField id="#tef" fx:id="id_tf" stylesheets="@style.css" />
+                  <Label id="#label" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="17.0" prefWidth="85.0" stylesheets="@style.css" text="Name" />
+                  <TextField id="#tef" fx:id="name_tf" layoutX="22.0" layoutY="10.0" stylesheets="@style.css" />
+                  <Label id="#label" alignment="CENTER" layoutX="171.0" layoutY="10.0" prefHeight="17.0" prefWidth="75.0" stylesheets="@style.css" text="Grade" />
+                  <TextField id="#tef" fx:id="grade_tf" layoutX="183.0" layoutY="10.0" stylesheets="@style.css" />
+                  <Label id="#label" alignment="CENTER" layoutX="332.0" layoutY="10.0" prefHeight="17.0" prefWidth="67.0" stylesheets="@style.css" text="Major" />
+                  <TextField id="#tef" fx:id="major_tf" layoutX="344.0" layoutY="10.0" stylesheets="@style.css" />
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </HBox>
+            <HBox id="#top_hbox" alignment="CENTER" layoutX="10.0" layoutY="10.0" spacing="10.0" stylesheets="@style.css">
+               <children>
+                  <Label id="#label" alignment="CENTER" prefHeight="17.0" prefWidth="96.0" stylesheets="@style.css" text="course_id" />
+                  <TextField id="#tef" fx:id="Cid_tf" stylesheets="@style.css" />
+                  <Label id="#label" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="17.0" prefWidth="85.0" stylesheets="@style.css" text="Student_id" />
+                  <TextField id="#tef" fx:id="Sid_tf" layoutX="22.0" layoutY="10.0" stylesheets="@style.css" />
+                  <Label id="#label" alignment="CENTER" layoutX="171.0" layoutY="10.0" prefHeight="17.0" prefWidth="75.0" stylesheets="@style.css" text="semester" />
+                  <TextField id="#tef" fx:id="semester_tf" layoutX="183.0" layoutY="10.0" stylesheets="@style.css" />
+                  <Button id="#btn" fx:id="add_to_Registration_btn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#btn_add_to_Registration_handel" prefHeight="32.0" prefWidth="101.0" stylesheets="@style.css" text="Add to Registration" />
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+</BorderPane>
